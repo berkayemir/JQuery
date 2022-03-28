@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button id="gizle" style="margin-top: 10px;">Gizle</button>
+    <button id="göster" style="margin-top: 10px;">Göster</button>
+    <button id="toggle" style="margin-top: 10px;">Toggle</button>
+    <script>
+        // $(document).ready(function(){
+        //     $("#gizle").click(function(){
+        //         $("div").hide();
+        //     })
+        // });
+        // $(document).ready(function(){
+        //     $("#gizle").click(function(){
+        //         $("div").hide(3000);//Bu süre milisaniye cinsinden
+        //     })
+        // })
+        $(document).ready(function(){
+            $("#gizle").click(function(){
+                $("div").hide("normal");//Süreyi slow,normal,fast olmak üzere belirtebiliriz
+            })
+        })
+        $(document).ready(function(){
+            $("#göster").click(function(){
+                $("div").show("normal");//Süreyi slow,normal,fast olmak üzere belirtebiliriz
+            })
+        })
+        $(document).ready(function(){
+            $("#toggle").click(function(){
+                $("div").toggle("normal");//Süreyi slow,normal,fast olmak üzere belirtebiliriz
+            })
+        })
+    </script>
+</body>
+</html>

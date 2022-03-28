@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: brown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="parent">Tüm span etiketlerinin bir üst ebeveynlerini seç</button>
+    <button id="parents">Tüm span etiketlerinin tüm üst ebeveynlerini seç</button>
+    <button id="parents-p">Span etiketlerinin ebeveynlerinden sadece p olanları seç</button>
+    <button id="parentsUntil">Span etiketlerinin ebeveynlerinden ,div etiketine kadar olaları seç</button>
+    <button id="children">Div etiketinin ilk seviye çocukları</button>
+    <button id="children-p">Div etiketinin çocugu olup,p etiketi olanlar</button>
+    <div>
+        Ata Ebeveyn Etiket(div)
+        <p>
+            Ebeveyn Etiket (p)
+        <p id="deneme">
+            <span style="background-color: aqua;">
+                Çocuk Etiket (span)
+            </span>
+        </p>
+        </p>
+    </div>
+    <div>
+        Ata Ebeveyn Etiket(div)
+        <h3>Çocuk Etiket (h3)</h3>
+        <p>Çocuk Etiket(p)</p>
+        <p>Çocuk Etiket(p)</p>
+        <span>Çocuk Etiket(span)</span>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            function clearBorder() {
+                $("html,body").css({
+                    "border": "none"
+                });
+                $("div").css({
+                    border: "2px solid lightgray",
+                    color: "grey"
+                })
+            };
+            $("#parent").click(function () {
+                clearBorder();
+                $("span").parent().css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+            $("#parents").click(function () {
+                clearBorder();
+                $("span").parents().css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+            $("#parents-p").click(function () {
+                clearBorder();
+                $("span").parent("p").css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+            $("#parentsUntil").click(function () {
+                clearBorder();
+                $("span").parentsUntil("div").css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+            $("#children").click(function () {
+                clearBorder();
+                $("div").children().css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+            $("#children-p").click(function () {
+                clearBorder();
+                $("div").children("p").css({
+                    color: "red",
+                    border: "2px solid red"
+                })
+            })
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

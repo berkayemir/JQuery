@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <button id="append">Append()</button>
+    <button id="prepend">Prepend()</button>
+    <button id="after">After()</button>
+    <button id="before">Before()</button>
+    
+    <ol id="liste">
+        <li>JavaScript</li>
+        <li>Jquery</li>
+    </ol>
+    <p id="p">Lorem ipsum dolor sit amet.</p>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#append").click(function(){
+                $("#liste").append("<li>Angular</li>")
+                $("#p").append('<span style="color:blue">Recep-Mikail-Aslı</span>')
+            });
+            $("#prepend").click(function(){
+                $("#liste").prepend("<li>Css</li>")
+                $("#p").prepend('<span style="color:blue">Recep-Mikail-Aslı</span>')
+            })
+            $("#after").click(function(){
+                $("#liste").after("<li>Css</li>")
+                $("#p").after('<span style="color:blue">Recep-Mikail-Aslı</span>')
+            })
+            $("#before").click(function(){
+                $("#liste").before("<li>Css</li>")
+                $("#p").before('<span style="color:blue">Recep-Mikail-Aslı</span>')
+            })
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <input type="text" id="keypress" placeholder="keypress olayı...">
+    <input type="text" id="keydown" placeholder="keypress down...">
+    <input type="text" id="keyup" placeholder="keypress up...">
+
+    <script>
+        //tuşa basılma
+        $("#keypress").keypress(function(){
+            alert("Keypress olayı gerçekleşti..")
+        });
+        //tuşa ilk basılma anı
+        $("#keydown").keydown(function(){
+            alert("Keydown olayı gerçekleşti..")
+        });
+        //tuşdan elimizi kaldırdıgımızda
+        $("#keyup").keyup(function(){
+            alert("Keyup olayı gerçekleşti..")
+        });
+    </script>
+
+</body>
+</html>
