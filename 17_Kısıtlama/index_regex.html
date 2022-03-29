@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #errorMessage{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <label for="">Lütfen sadece rakam giriniz: </label>
+    <input type="text" name="" id="rakam">
+    <label for="">Lütfen sadece harf giriniz:</label>
+    <input type="text" name="" id="harf">
+
+    <span id="errorMessage"></span>
+
+    <script>
+        $(document).ready(function () {
+            $("#rakam").keyup(function () {
+                if (this.value.match(/[^0-9]/g)) {
+                    this.value=this.value.replace(/[^0-9]/g,"")
+                }
+            })
+            $("#harf").keyup(function(){
+                if(this.value.match(/[^a-zA-Z]/gm)){
+                    this.value=this.value.replace(/[^a-zA-Z]/gm,"")
+                }
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #errorMessage{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <label for="">Lütfen sadece rakam giriniz: </label>
+    <input type="text" name="" id="rakam">
+    <span id="errorMessage"></span>
+
+    <script>
+        $(document).ready(function () {
+            $("#rakam").keypress(function (tus) {
+                if (tus.which != 8 && tus.which != 0 && (tus.which < 48 || tus.which > 57)) {
+                    $("#errorMessage").html("Lütfen sadece rakam giriniz").show().fadeOut(2000)
+                    return false;
+                }
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>
